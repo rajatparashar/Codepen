@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Mercury Logo</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Raleway";
+            background-color: #ccc;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+            outline: none;
+        }
+        
+        .container {
+            position: relative;
+            margin: 50px auto;
+            width: 98vw;
+            text-align: center;
+        }
+        
+        .character {
+            font-size: 200px;
+            color: #fff;
+            text-shadow: 5px 5px 20px #444;
+            font-weight: 900;
+            display: inline;
+        }
+        
+        #e,
+        #c,
+        #u,
+        #r,
+        #y,
+        #r2,
+        #mercury {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Click on below character</h1>
+        <div class='character' id='m' onclick='myFunction1()'>M</div>
+        <div class='character' id='e' onclick='myFunction2()'>E</div>
+        <div class='character' id='r' onclick='myFunction3()'>R</div>
+        <div class='character' id='c' onclick='myFunction4()'>C</div>
+        <div class='character' id='u' onclick='myFunction5()'>U</div>
+        <div class='character' id='r2' onclick='myFunction6()'>R</div>
+        <div class='character' id='y' onclick='myFunction7()'>Y</div>
+        <div class='character' id='mercury' onclick='myFunction8()'>MERCURY</div>
+    </div>
+
+    <script>
+        function myFunction1() {
+            document.getElementById('m').style.display = 'none';
+            document.getElementById('e').style.display = 'block';
+        }
+
+        function myFunction2() {
+            document.getElementById('e').style.display = 'none';
+            document.getElementById('r').style.display = 'block';
+        }
+
+        function myFunction3() {
+            document.getElementById('r').style.display = 'none';
+            document.getElementById('c').style.display = 'block';
+        }
+
+        function myFunction4() {
+            document.getElementById('c').style.display = 'none';
+            document.getElementById('u').style.display = 'block';
+        }
+
+        function myFunction5() {
+            document.getElementById('u').style.display = 'none';
+            document.getElementById('r2').style.display = 'block';
+        }
+
+        function myFunction6() {
+            document.getElementById('r2').style.display = 'none';
+            document.getElementById('y').style.display = 'block';
+        }
+
+        function myFunction7() {
+            document.getElementById('y').style.display = 'none';
+            document.getElementById('mercury').style.display = 'block';
+        }
+
+        function myFunction8() {
+            document.getElementById('mercury').style.display = 'none';
+            document.getElementById('m').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>New Preloader</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: black;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+        }
+        
+        #biggest {
+            height: 150px;
+            width: 150px;
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            border-top-color: #9600aa;
+            animation: rotate 3s linear infinite;
+        }
+        
+        #bigger {
+            height: 130px;
+            width: 130px;
+            position: relative;
+            margin: 7px auto;
+            border-top-color: #9600be;
+            animation: rotate 2s linear infinite;
+        }
+        
+        #big {
+            height: 110px;
+            width: 110px;
+            position: relative;
+            margin: 7px auto;
+            border-top-color: #9600d7;
+            animation: rotate 1.5s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .circle {
+            border-radius: 50%;
+            border: 3px solid transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="biggest" class="circle">
+        <div id="bigger" class="circle">
+            <div id="big" class="circle">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
