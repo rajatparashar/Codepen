@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google Loading</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+        }
+        
+        #container {
+            position: absolute;
+            left: 40%;
+            margin-top: 300px;
+        }
+        
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        #red {
+            background-color: #ff4d4d;
+            animation: animate 1000ms infinite ease;
+        }
+        
+        #yellow {
+            background-color: #ede246;
+            animation: animate 1000ms infinite 100ms ease;
+        }
+        
+        #green {
+            background-color: #12cc21;
+            animation: animate 1000ms infinite 200ms ease;
+        }
+        
+        #blue {
+            background-color: #6666ff;
+            animation: animate 1000ms infinite 300ms ease;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: translateY(0)
+            }
+            25% {
+                transform: translateY(-40px) scaleY(1.6);
+            }
+            50% {
+                transform: translateY(10px) scaleY(0.7);
+            }
+            75% {
+                transform: translateY(0) scaleY(1);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="circle" id="red"></div>
+        <div class="circle" id="yellow"></div>
+        <div class="circle" id="green"></div>
+        <div class="circle" id="blue"></div>
+    </div>
+
+</body>
+
+</html>

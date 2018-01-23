@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Fibonacci Sequence</title>
+    <style>
+        body {
+            padding: 10px;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+            outline: none;
+            letter-spacing: 2px;
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        .container {
+            position: relative;
+            margin: 50px auto;
+            width: 98vw;
+            text-align: center;
+        }
+        
+        #box,
+        #calculate {
+            padding: 7px;
+            color: #555;
+            border: 1px solid #345;
+            border-radius: 3px;
+            font-size: 15px;
+        }
+        
+        #calculate {
+            padding: 8px 15px;
+            border: none;
+            background-color: #ddd;
+            color: #000;
+            cursor: pointer;
+        }
+        
+        #answer {
+            margin: 0;
+        }
+        
+        ul li {
+            list-style-type: none;
+            margin: 5px;
+            font-weight: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Calculate a Fibonacci Sequence!</h2>
+        <h3>Choose a term to calculate</h3>
+        <input type='number' id='box' placeholder='Enter a number' min='0'>
+        <input type='submit' id='calculate' value='Calculate' onclick='calcFibonacci()'>
+        <h4>Result:</h4>
+        <div id='result'>
+            <ul id='answer'></ul>
+        </div>
+    </div>
+
+    <script>
+        function calcFibonacci() {
+            var val = document.getElementById('box').value;
+            var x = fib(val);
+            var ul = document.getElementById('answer');
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode("Term " + val + " is equal to " + x));
+            ul.appendChild(li);
+
+        }
+
+        function fib(n) {
+            if (n == 0) {
+                return 0;
+            } else if (n <= 2) {
+                return 1;
+            } else {
+                return fib(n - 1) + fib(n - 2);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

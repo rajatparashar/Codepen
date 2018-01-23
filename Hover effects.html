@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hover effects</title>
+    <style>
+        body {
+            padding: 10px;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .box {
+            color: grey;
+            background-color: #eee;
+            padding: 15px 20px;
+            margin: 7px;
+            display: inline-block;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0 1px 2px #ccc;
+        }
+        
+        #Grow:hover {
+            transform: scale(1.1);
+        }
+        
+        #Shrink:hover {
+            transform: scale(0.909);
+        }
+        
+        #Pulse:hover {
+            animation: pulse 1000ms infinite linear;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(0.909);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        
+        #PulseGrow:hover {
+            animation: pulsegrow 700ms infinite linear;
+        }
+        
+        @keyframes pulsegrow {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        #PulseShrink:hover {
+            animation: pulseshrink 700ms infinite linear;
+        }
+        
+        @keyframes pulseshrink {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.909);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        #Push:hover {
+            animation: push 400ms linear;
+        }
+        
+        @keyframes push {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.75);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        #Pop:hover {
+            animation: pop 400ms linear;
+        }
+        
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        #Rotate:hover {
+            transform: rotate(7deg);
+        }
+        
+        #GrowRotate:hover {
+            transform: rotate(7deg) scale(1.1);
+        }
+        
+        #Float:hover {
+            transform: translate(0, -10px);
+        }
+        
+        #Sink:hover {
+            transform: translate(0, 10px);
+        }
+        
+        #Hover:hover {
+            animation: Hover 1500ms infinite linear;
+        }
+        
+        @keyframes Hover {
+            0% {
+                transform: translate(0, -7px);
+            }
+            50% {
+                transform: translate(0, -10px);
+            }
+            100% {
+                transform: translate(0, -7px);
+            }
+        }
+        
+        #Hang:hover {
+            animation: Hang 1500ms infinite linear;
+        }
+        
+        @keyframes Hang {
+            0% {
+                transform: translate(0, 7px);
+            }
+            50% {
+                transform: translate(0, 10px);
+            }
+            100% {
+                transform: translate(0, 7px);
+            }
+        }
+        
+        #Skew:hover {
+            transform: skewX(-10deg);
+        }
+        
+        #SkewForward:hover {
+            transform: skewX(-10deg);
+            transform-origin: 50% 100%;
+        }
+        
+        #WobbleHorizontal:hover {
+            animation: WobbleHorizontal 800ms linear;
+        }
+        
+        @keyframes WobbleHorizontal {
+            0% {
+                transform: translateX(0px);
+            }
+            20% {
+                transform: translateX(8px);
+            }
+            40% {
+                transform: translateX(-6px);
+            }
+            60% {
+                transform: translateX(4px);
+            }
+            80% {
+                transform: translateX(-2px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
+        
+        #WobbleVertical:hover {
+            animation: WobbleVertical 800ms linear;
+        }
+        
+        @keyframes WobbleVertical {
+            0% {
+                transform: translateY(0px);
+            }
+            20% {
+                transform: translateY(8px);
+            }
+            40% {
+                transform: translateY(-6px);
+            }
+            60% {
+                transform: translateY(4px);
+            }
+            80% {
+                transform: translateY(-2px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        #WobbleTop:hover {
+            animation: WobbleTop 800ms linear;
+            transform-origin: 0% 100%;
+        }
+        
+        @keyframes WobbleTop {
+            0% {
+                transform: skewX(0deg);
+            }
+            20% {
+                transform: skewX(16deg);
+            }
+            40% {
+                transform: skewX(-12deg);
+            }
+            60% {
+                transform: skewX(8deg);
+            }
+            80% {
+                transform: skewX(-4deg);
+            }
+            100% {
+                transform: skewX(0deg);
+            }
+        }
+        
+        #WobbleBottom:hover {
+            animation: WobbleBottom 800ms linear;
+            transform-origin: 100% 0%;
+        }
+        
+        @keyframes WobbleBottom {
+            0% {
+                transform: skewX(0deg);
+            }
+            20% {
+                transform: skewX(16deg);
+            }
+            40% {
+                transform: skewX(-12deg);
+            }
+            60% {
+                transform: skewX(8deg);
+            }
+            80% {
+                transform: skewX(-4deg);
+            }
+            100% {
+                transform: skewX(0deg);
+            }
+        }
+        
+        #BorderFade:hover {
+            box-shadow: 0 0 0 4px #666 inset;
+        }
+        
+        #Hollow:hover {
+            box-shadow: 0 0 0 4px #eee inset;
+            background-color: #fff;
+        }
+        
+        #Trim:hover {
+            box-shadow: 0 0 0 4px #eee inset;
+        }
+        
+        #RoundCorners:hover {
+            border-radius: 20px;
+        }
+        
+        #Glow:hover {
+            box-shadow: 0 0 10px #666;
+        }
+        
+        #BoxShadowOutset:hover {
+            box-shadow: 3px 3px 7px #666;
+        }
+        
+        #BoxShadowInset:hover {
+            box-shadow: inset 3px 3px 4px #666;
+        }
+        
+        #FloatShadow:hover {
+            transform: translate(0, -10px);
+        }
+        
+        #ShadowRadial:hover {
+            box-shadow: 0 6px 10px -4px #666, 0 -6px 10px -4px #666;
+            box-shadow: -5px 0 5px -5px #333, 5px 0 5px -5px #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hover Effects</h1>
+    <h2>2D Transforms</h2> <span class="box" id="Grow"> Grow </span> <span class="box" id="Shrink"> Shrink </span> <span class="box" id="Pulse"> Pulse </span> <span class="box" id="PulseGrow"> Pulse Grow </span> <span class="box" id="PulseShrink"> Pulse Shrink </span> <span class="box" id="Push"> Push </span> <span class="box" id="Pop"> Pop </span> <span class="box" id="Rotate"> Rotate </span> <span class="box" id="GrowRotate"> Grow Rotate </span> <span class="box" id="Float"> Float </span> <span class="box" id="Sink"> Sink </span> <span class="box" id="Hover"> Hover </span> <span class="box" id="Hang"> Hang </span> <span class="box" id="Skew"> Skew </span> <span class="box" id="SkewForward"> Skew Forward </span> <span class="box" id="WobbleHorizontal"> Wobble Horizontal </span> <span class="box" id="WobbleVertical"> Wobble Vertical </span> <span class="box" id="WobbleTop"> Wobble Top </span> <span class="box" id="WobbleBottom"> Wobble Bottom </span>
+    <h2>Border Transitions</h2> <span class="box" id="BorderFade"> Border Fade </span> <span class="box" id="Hollow"> Hollow </span> <span class="box" id="Trim"> Trim </span> <span class="box" id="RoundCorners"> Round Corners </span>
+    <h2>Shadow and Glow Transitions</h2> <span class="box" id="Glow"> Glow </span> <span class="box" id="BoxShadowOutset"> Box Shadow Outset </span> <span class="box" id="BoxShadowInset"> Box Shadow Inset </span></body>
+
+</html>

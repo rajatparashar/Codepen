@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Eclipses
+    </title>
+    <style>
+        body,
+        html {
+            background-color: #000;
+            margin: 0; 
+            padding: 0; 
+	    min-height: 100%;
+	    overflow: hidden;
+	    animation: changecolor 11s infinite;
+	}
+
+	@keyframes changecolor {
+	0%{background-color: #ccccff;}
+	50%{background-color: #00001a;}
+	100%{background-color: #ccccff;}
+        }
+
+	* {
+	box-sizing: border-box;
+	border: 0px solid white;
+	}
+        
+        #sun {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(#fff, #ffff99);
+            margin: 250px auto;
+            filter: blur(2px);
+	    box-shadow: 0 0 100px #ffff99;
+        }               
+        
+        #moon {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #666;
+            margin-top: -450px;
+            margin-left: 0vw;
+	    position: absolute;
+            z-index: 10;
+   	    animation: rotatemoon 10s infinite linear;
+        }
+
+@keyframes rotatemoon {
+0%{margin-left:  -10%; background-color: #ccccff;}
+50%{background-color: #000;}
+100%{margin-left: 100%; background-color: #ccccff;}
+}
+              
+      
+    </style>
+</head>
+<body>
+
+    <div id='sun'>
+    </div>
+
+    <div id='moon'>
+    </div>  
+
+</body>
+</html>
