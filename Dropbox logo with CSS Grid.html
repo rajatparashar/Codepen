@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dropbox logo with CSS Grid</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+        }
+        
+        .box {
+            margin: 150px auto;
+            width: 300px;
+            height: 300px;
+            transform: scale(0.8);
+        }
+        
+        .cover {
+            width: 100px;
+            height: 100px;
+            background-color: #0076ff;
+            position: relative;
+            margin: 23px 0;
+        }
+        
+        #one {
+            transform: rotate(-37deg) skew(15deg);
+        }
+        
+        #two {
+            margin-left: 2px;
+            transform: rotate(-37deg) skew(15deg);
+        }
+        
+        #three {
+            margin-top: -242px;
+            margin-left: 161px;
+            transform: rotate(-37deg) skew(15deg);
+        }
+        
+        #four {
+            margin-top: 22px;
+            margin-left: 162px;
+            transform: rotate(-37deg) skew(15deg);
+        }
+        
+        #five {
+            margin-top: -50px;
+            margin-left: 83px;
+            transform: rotate(-37deg) skew(15deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class='box'>
+
+        <div class='cover' id='one'></div>
+        <div class='cover' id='two'></div>
+        <div class='cover' id='three'></div>
+        <div class='cover' id='four'></div>
+        <div class='cover' id='five'></div>
+
+    </div>
+</body>
+</html>

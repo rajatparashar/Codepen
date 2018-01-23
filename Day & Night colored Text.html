@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Day & Night colored Text</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Raleway";
+        }
+        
+        .text {
+            margin-left: 10%;
+            margin-right: 10%;
+            color: black;
+            font-size: 18px;
+            margin-top: 100px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        
+        #btn {
+            padding: 10px 15px;
+            border: 1px solid gray;
+            outline: none;
+            margin-top: 100px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: 0.3s ease;
+        }
+        
+        #btn {
+            color: #000;
+            background-color: #fff;
+            margin-left: 30%;
+        }
+        
+        #btn:hover {
+            cursor: pointer;
+        }
+        
+        #btn:active {
+            color: #fff;
+            background-color: #6699ff;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .text {
+                font-size: 16px;
+                line-height: 1.8;
+                text-align: justify;
+            }
+        }
+        
+        .black {
+            color: #fff;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button type="button" id="btn">Click to change view</button>
+
+    <div class="text">
+        <p>In programming languages the term "variable" describes a storage location normally associated with an identifier that contains some value. Despite fact that CSS is a markup language, spec creators were very generous recently and gave us a tiny, but very powerful piece of real programming capability. Excitement about native CSS Custom Properties is generally tempered by the incorrect comparison to variables used in preprocessors like Sass or LESS. Don't be fooled by this misconception! Bare with me for the rest of this article and let's embrace the power of this new native feature together.</p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#btn').click(function() {
+                $('.text').toggleClass('black');
+                $('body').toggleClass('black');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
