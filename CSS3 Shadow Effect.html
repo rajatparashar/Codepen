@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS3 Shadow Effect</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border: 0px solid grey;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        table {
+            margin: 0 auto;
+            border-spacing: 50px;
+        }
+
+        .box {
+            width: 400px;
+            height: 75px;
+            box-shadow: 0px 0px 3px #888, inset 0px 0px 30px #ccc;
+            padding: 25px;
+            background: #FFF;
+            font-weight: bold;
+        }
+
+        #liftedcorners:before,
+        #liftedcorners:after {
+            z-index: -1;
+            position: absolute;
+            content: "";
+            width: 150px;
+            height: 10px;
+            top: 51px;
+            bottom: 15px;
+            max-width: 300px;
+            left: 15px;
+            background: #777;
+            box-shadow: 0 15px 10px #777;
+            transform: rotate(-4deg);
+        }
+
+        #liftedcorners {
+            position: relative;
+        }
+
+        #liftedcorners:after {
+            left: 230px;
+            transform: rotate(4deg);
+        }
+
+        #curledcorners:before,
+        #curledcorners:after {
+            z-index: -1;
+            position: absolute;
+            content: "";
+            width: 150px;
+            height: 10px;
+            top: 51px;
+            bottom: 15px;
+            max-width: 300px;
+            left: 15px;
+            background: #777;
+            box-shadow: 0 15px 10px #777;
+            transform: rotate(-4deg);
+        }
+
+        #curledcorners {
+            position: relative;
+            border-radius: 0 0 10% 10%;
+        }
+
+        #curledcorners:after {
+            left: 230px;
+            transform: rotate(4deg);
+        }
+
+        #raisedbox {
+            box-shadow: 0 16px 8px -8px grey, inset 0px 0px 20px #ccc;
+        }
+
+        #singleverticalcurve:before {
+            z-index: -10;
+            content: '';
+            position: absolute;
+            width: 392px;
+            height: 60px;
+            background: grey;
+            left: 0px;
+            top: 7px;
+            border-radius: 25%;
+            box-shadow: 0 0 15px #000;
+        }
+
+        #singleverticalcurve {
+            position: relative;
+        }
+
+        #verticalcurves:before {
+            z-index: -10;
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 55px;
+            background: grey;
+            left: 0px;
+            top: 10px;
+            border-radius: 25%;
+            box-shadow: 0 0 20px #000;
+        }
+
+        #verticalcurves {
+            position: relative;
+        }
+
+        #singlehorizontalcurve:before {
+            z-index: -10;
+            content: '';
+            position: absolute;
+            width: 380px;
+            height: 55px;
+            background: grey;
+            left: 10px;
+            top: 20px;
+            border-radius: 25%;
+            box-shadow: 0 0 20px #000;
+        }
+
+        #singlehorizontalcurve {
+            position: relative;
+        }
+
+        #horizontalcurves:before {
+            z-index: -10;
+            content: '';
+            position: absolute;
+            width: 385px;
+            height: 75px;
+            background: grey;
+            left: 7px;
+            top: 0px;
+            border-radius: 25%;
+            box-shadow: 0 0 20px #555;
+        }
+
+        #horizontalcurves {
+            position: relative;
+        }
+
+        #rotatedbox:before,
+        #rotatedbox:after {
+            z-index: -1;
+            position: absolute;
+            content: "";
+            width: 150px;
+            height: 10px;
+            top: 51px;
+            bottom: 15px;
+            max-width: 300px;
+            left: 15px;
+            background: #777;
+            box-shadow: 0 15px 10px #777;
+            transform: rotate(-4deg);
+        }
+
+        #rotatedbox {
+            position: relative;
+        }
+
+        #rotatedbox:after {
+            left: 230px;
+            transform: rotate(4deg);
+        }
+
+        tr:nth-of-type(5) td:nth-of-type(1) {
+            transform: rotate(-7deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+
+        <tr>
+            <td>
+                <div class='box' id='liftedcorners'>Lifted corners</div>
+            </td>
+            <td>
+                <div class='box' id='curledcorners'>Curled corners</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='box' id='horizontalcurves'>Horizontal curves</div>
+            </td>
+            <td>
+                <div class='box' id='raisedbox'>Raised box</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='box' id='singleverticalcurve'>Single vertical curve</div>
+            </td>
+            <td>
+                <div class='box' id='verticalcurves'>Vertical curves</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='box' id='singlehorizontalcurve'>Single horizontal curve</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='box rotated' id='rotatedbox'>Rotated box</div>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
