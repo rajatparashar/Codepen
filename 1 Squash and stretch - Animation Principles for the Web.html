@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <title>1 Squash and stretch - Animation Principles for the Web</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #e9b59f;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
+        
+        .wall {
+            width: 1em;
+            height: 10em;
+            position: absolute;
+            background-color: #000;
+            top: calc(50% - 5em);
+            left: calc(50% + 10em);
+        }
+        
+        .box {
+            width: 5em;
+            height: 5em;
+            background-color: #355aff;
+            position: relative;
+            border: 1em solid #fff;
+            left: calc(50% - 5em);
+            margin-top: 13.5em;
+            position: absolute;
+            animation: move 3s infinite;
+        }
+        
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            10% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            30% {
+                transform: translateX(-5em) scaleX(1.4);
+                opacity: 1;
+            }
+            35% {
+                transform: translateX(11.2em) scale(0.5, 1.4);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(11.2em, 11.2em) scale(0.5, 1.4);
+                opacity: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Principle 1: Squash and stretch</h2>
+
+    <div class='wall'></div>
+    <div class='box'></div>
+
+</body>
+
+</html>
