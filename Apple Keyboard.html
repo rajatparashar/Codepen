@@ -1,0 +1,723 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Apple Keyboard</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        html,
+        body,
+        div,
+        p,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+        
+        body {
+            line-height: 1;
+        }
+        
+        ol,
+        ul {
+            list-style: none;
+        }
+        
+        blockquote,
+        q {
+            quotes: none;
+        }
+        
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f6f6f6;
+        }
+        
+        body * {
+            box-sizing: border-box;
+            border: 0px solid black;
+            transition: all 0.1s ease;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 30px;
+            font-size: 40px;
+            text-shadow: 2px 2px 3px #888;
+        }
+        
+        .Keyboard_Body {
+            width: 900px;
+            height: 407px;
+            border-radius: 10px;
+            border-top-right-radius: 2%;
+            border-top-left-radius: 2%;
+            box-shadow: inset 0 15px 25px -5px #bbb, inset 0 -10px 3px -2px #bbb, 0 0 5px #ccc;
+            margin: 50px auto;
+            background-color: #e7e7e7;
+            padding: 15px;
+            padding-top: 35px;
+        }
+        
+        .list {
+            position: relative;
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .list li {
+            cursor: pointer;
+            box-shadow: inset 0 -5px 1px -2px #ccc, 1px 0 5px -2px #000, -1px 1px 5px -2px #000;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .list .top_row,
+        .list .row_two,
+        .list .row_three,
+        .list .row_four,
+        .list .row_five,
+        .list .row_six {
+            position: relative;
+            margin-right: 5px;
+            background-color: #f3f3f3;
+            border-radius: 3px;
+            width: 53.2px;
+            height: 30px;
+            display: inline-block;
+        }
+        
+        .list .top_row .key,
+        .list .row_two .key,
+        .list .row_three .key,
+        .list .row_four .key,
+        .list .row_five .key,
+        .list .row_six .key {
+            position: absolute;
+            font-size: 12px;
+            color: #aaa;
+            text-align: right;
+            padding-right: 7px;
+            padding-top: 12px;
+            border-radius: 3px;
+            width: 100%;
+            height: 100%;
+            font-weight: 900;
+        }
+        
+        .list .top_row .key {
+            font-size: 10px;
+        }
+        
+        .list:first-child .top_row:first-child .key {
+            text-align: center;
+            padding: 7px;
+        }
+        
+        .list:nth-of-type(2) .row_two:last-child .key,
+        .list:nth-of-type(4) .row_four:last-child .key,
+        .list:nth-of-type(5) .row_five:last-child .key {
+            padding-right: 10px;
+            padding-top: 30px;
+        }
+        
+        .list:nth-of-type(3) .row_three .key,
+        .list:nth-of-type(4) .row_four .key,
+        .list:nth-of-type(5) .row_five .key {
+            padding-right: 20px;
+            padding-top: 17px;
+        }
+        
+        .list:nth-of-type(3) .row_three:nth-of-type(12) .key p,
+        .list:nth-of-type(3) .row_three:nth-of-type(13) .key p,
+        .list:nth-of-type(3) .row_three:nth-of-type(14) .key p {
+            left: 9px;
+            top: -15px;
+        }
+        
+        .list:nth-of-type(3) .row_three:nth-of-type(1) .key,
+        .list:nth-of-type(4) .row_four:nth-of-type(1) .key,
+        .list:nth-of-type(5) .row_five:nth-of-type(1) .key,
+        .list:nth-of-type(6) .row_six:nth-of-type(1) .key {
+            padding-left: 10px;
+            padding-top: 27px;
+            text-align: left;
+            font-size: 10px;
+        }
+        
+        .list:nth-of-type(6) .row_six .key {
+            font-size: 10px;
+            text-align: center;
+            padding-left: 9px;
+            padding-top: 27px;
+        }
+        
+        .list .row_one {
+            height: 30px;
+            width: 48px;
+        }
+        
+        .list .row_two,
+        .list .row_three,
+        .list .row_four,
+        .list .row_five,
+        .list .row_six {
+            height: 50px;
+            width: 49.9px;
+        }
+        
+        .list:nth-of-type(2) .row_two:last-child {
+            width: 97px;
+        }
+        
+        .list:nth-of-type(3) .row_three:first-child {
+            width: 97.3px;
+            padding: 0;
+        }
+        
+        .list:nth-of-type(4) .row_four:first-child {
+            width: 110px;
+        }
+        
+        .list:nth-of-type(4) .row_four:last-child {
+            width: 96.3px;
+        }
+        
+        .list:nth-of-type(5) .row_five:first-child,
+        .list:nth-of-type(5) .row_five:last-child {
+            width: 132.5px;
+        }
+        
+        .list:nth-of-type(6) .row_six:nth-of-type(8) .key,
+        .list:nth-of-type(6) .row_six:nth-of-type(10) .key {
+            padding: 5px;
+        }
+        
+        .list:nth-of-type(6) .sublist .list .upper .key,
+        .list:nth-of-type(6) .sublist .list .lower .key {
+            padding: 0;
+        }
+        
+        .list:nth-of-type(6) .sublist .list .upper .key .fa,
+        .list:nth-of-type(6) .sublist .list .lower .key .fa {
+            margin: 0;
+            width: 100%;
+            position: relative;
+            padding: 4px;
+            text-align: center;
+        }
+        
+        .list:nth-of-type(6) .row_six:nth-of-type(8) .key .fa {
+            text-align: center;
+            padding: 0px;
+        }
+        
+        .list:nth-of-type(6) .row_six:first-child {
+            width: 54px;
+        }
+        
+        .list:nth-of-type(6) .row_six:nth-of-type(2) {
+            width: 70px;
+        }
+        
+        .list:nth-of-type(6) .row_six:nth-of-type(3) {
+            width: 55px;
+        }
+        
+        .list:nth-of-type(6) .row_six:nth-of-type(4),
+        .list:nth-of-type(6) .row_six:nth-of-type(6) {
+            width: 79px;
+        }
+        
+        .list:nth-of-type(6) .row_six:nth-of-type(5) {
+            /*space*/
+            width: 245px;
+        }
+        
+        .list:nth-of-type(6) .row_six:nth-of-type(8),
+        .list:nth-of-type(6) .row_six:nth-of-type(10) {
+            height: 25px;
+        }
+        
+        .key p {
+            position: relative;
+            text-align: center;
+            top: -10px;
+            padding: 7px;
+            width: 120%;
+            height: 50%;
+        }
+        
+        .sublist {
+            margin-top: -5px;
+            margin-right: 5px;
+            display: inline-block;
+            box-shadow: none;
+        }
+
+        .sublist .list span:last-child *{
+            position: relative;
+            margin-top: 20px;
+            border: 0px solid red;        
+        }
+         
+        .sublist .list {
+            margin: 0px;   
+            box-shadow: 0;         
+        }
+        
+        .sublist .list .upper,
+        .sublist .list .lower {
+            background-color: #f3f3f3;
+            border-radius: 3px;
+            width: 50px;
+            height: 25px;
+            display: block;            
+        }
+        
+        .sublist .list span {
+            box-shadow: inset 0 -5px 1px -2px #ccc;
+        }
+        
+        .sublist .list .upper {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+
+        .sublist .list .lower {        
+        z-index: -100; 
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+                        
+        .sublist .list .upper .key,
+        .sublist .list .lower .key {            
+            color: #aaa;           
+        }
+        
+        .fa {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Apple Keyboard</h1>
+    <div class="Keyboard_Body">
+        <ul class='list'>
+            <li class='top_row'><a href="#" class='key'>esc</a></li>
+            <li class='top_row'><a href="#" class='key'>F1</a></li>
+            <li class='top_row'><a href="#" class='key'>F2</a></li>
+            <li class='top_row'><a href="#" class='key'>F3</a></li>
+            <li class='top_row'><a href="#" class='key'>F4</a></li>
+            <li class='top_row'><a href="#" class='key'>F5</a></li>
+            <li class='top_row'><a href="#" class='key'>F6</a></li>
+            <li class='top_row'><a href="#" class='key'>F7</a></li>
+            <li class='top_row'><a href="#" class='key'>F8</a></li>
+            <li class='top_row'><a href="#" class='key'>F9</a></li>
+            <li class='top_row'><a href="#" class='key'>F10</a></li>
+            <li class='top_row'><a href="#" class='key'>F11</a></li>
+            <li class='top_row'><a href="#" class='key'>F12</a></li>
+            <li class='top_row'><a href="#" class='key'>EJECT</a></li>
+        </ul>
+        <ul class='list'>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>~</p>
+                    <p>`</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>!</p>
+                    <p>1</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>@</p>
+                    <p>2</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>#</p>
+                    <p>3</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>$</p>
+                    <p>4</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>%</p>
+                    <p>5</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>^</p>
+                    <p>6</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>&</p>
+                    <p>7</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>*</p>
+                    <p>8</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>(</p>
+                    <p>9</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>)</p>
+                    <p>0</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>_</p>
+                    <p>-</p>
+                </a>
+            </li>
+            <li class='row_two'>
+                <a href="#" class='key'>
+                    <p>+</p>
+                    <p>=</p>
+                </a>
+            </li>
+            <li class='row_two'><a href="#" class='key'>delete</a></li>
+        </ul>
+        <ul class='list'>
+            <li class='row_three'><a href="#" class='key'>tab</a></li>
+            <li class='row_three'><a href="#" class='key'>Q</a></li>
+            <li class='row_three'><a href="#" class='key'>W</a></li>
+            <li class='row_three'><a href="#" class='key'>E</a></li>
+            <li class='row_three'><a href="#" class='key'>R</a></li>
+            <li class='row_three'><a href="#" class='key'>T</a></li>
+            <li class='row_three'><a href="#" class='key'>Y</a></li>
+            <li class='row_three'><a href="#" class='key'>U</a></li>
+            <li class='row_three'><a href="#" class='key'>I</a></li>
+            <li class='row_three'><a href="#" class='key'>O</a></li>
+            <li class='row_three'><a href="#" class='key'>P</a></li>
+            <li class='row_three'>
+                <a href="#" class='key'>
+                    <p>{</p>
+                    <p>[</p>
+                </a>
+            </li>
+            <li class='row_three'>
+                <a href="#" class='key'>
+                    <p>}</p>
+                    <p>]</p>
+                </a>
+            </li>
+            <li class='row_three'>
+                <a href="#" class='key'>
+                    <p>|</p>
+                    <p>\</p>
+                </a>
+            </li>
+        </ul>
+        <ul class='list'>
+            <li class='row_four'><a href="#" class='key'>caps lock</a></li>
+            <li class='row_four'><a href="#" class='key'>A</a></li>
+            <li class='row_four'><a href="#" class='key'>S</a></li>
+            <li class='row_four'><a href="#" class='key'>D</a></li>
+            <li class='row_four'><a href="#" class='key'>F</a></li>
+            <li class='row_four'><a href="#" class='key'>G</a></li>
+            <li class='row_four'><a href="#" class='key'>H</a></li>
+            <li class='row_four'><a href="#" class='key'>J</a></li>
+            <li class='row_four'><a href="#" class='key'>K</a></li>
+            <li class='row_four'><a href="#" class='key'>L</a></li>
+            <li class='row_three'>
+                <a href="#" class='key'>
+                    <p>:</p>
+                    <p>;</p>
+                </a>
+            </li>
+            <li class='row_three'>
+                <a href="#" class='key'>
+                    <p>"</p>
+                    <p>'</p>
+                </a>
+            </li>
+            <li class='row_four'><a href="#" class='key'>return</a></li>
+        </ul>
+        <ul class='list'>
+            <li class='row_five'><a href="#" class='key'>shift</a></li>
+            <li class='row_five'><a href="#" class='key'>Z</a></li>
+            <li class='row_five'><a href="#" class='key'>X</a></li>
+            <li class='row_five'><a href="#" class='key'>C</a></li>
+            <li class='row_five'><a href="#" class='key'>V</a></li>
+            <li class='row_five'><a href="#" class='key'>B</a></li>
+            <li class='row_five'><a href="#" class='key'>N</a></li>
+            <li class='row_five'><a href="#" class='key'>M</a></li>
+            <li class='row_three'>
+                <a href="#" class='key'>
+                    <p>
+                        &lt;</p>
+                            <p>,</p>
+                </a>
+            </li>
+            <li class='row_three'>
+                <a href="#" class='key'>
+                    <p>&gt;</p>
+                    <p>.</p>
+                </a>
+            </li>
+            <li class='row_three'>
+                <a href="#" class='key'>
+                    <p>?</p>
+                    <p>/</p>
+                </a>
+            </li>
+            <li class='row_five'><a href="#" class='key'>shift</a></li>
+        </ul>
+        <ul class='list'>
+            <li class='row_six'><a href="#" class='key'>fn</a></li>
+            <li class='row_six'><a href="#" class='key'>control</a></li>
+            <li class='row_six'><a href="#" class='key'>option</a></li>
+            <li class='row_six'><a href="#" class='key'>command</a></li>
+            <li class='row_six'>
+                <a href="#" class='key'></a>
+            </li>
+            <li class='row_six'><a href="#" class='key'>command</a></li>
+            <li class='row_six'><a href="#" class='key'>option</a></li>
+            <li class='row_six left'><a href="#" class='key'><i class="fa">&#xf0d9;</i></a></li>
+            <li class='sublist'>
+                <div class='list'>
+                    <span class='upper '><a href="#" class='key'><i class="fa">&#xf0d8;</i></a></span>
+                    <span class='lower '><a href="#" class='key'><i class="fa">&#xf0d7;</i></a></span>
+                </div>
+            </li>
+            <li class='row_six right'><a href="#" class='key'><i class="fa">&#xf0da;</i></a></li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('li').mousedown(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 0px 1px -2px #ccc, 1px 0 5px -2px #000, -1px 1px 5px -2px #000',
+                    'height': '48px',
+                    'background-color': '#eaeaea'
+                });
+            });
+            $('li').mouseup(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 -5px 1px -2px #ccc, 1px 0 5px -2px #000, -1px 1px 5px -2px #000',
+                    'height': '50px',
+                    'background-color': '#f3f3f3'
+                });
+            });
+            $('.top_row').mousedown(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 0px 1px -2px #ccc, 1px 0 5px -2px #000, -1px 1px 5px -2px #000',
+                    'height': '28px',
+                    'background-color': '#eaeaea'
+                });
+            });
+            $('.top_row').mouseup(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 -5px 1px -2px #ccc, 1px 0 5px -2px #000, -1px 1px 5px -2px #000',
+                    'height': '30px',
+                    'background-color': '#f3f3f3'
+                });
+            });
+            $('.left').mousedown(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 0px 1px -2px #ccc, 1px 0 5px -2px #000, -1px 1px 5px -2px #000',
+                    'height': '23px',
+                    'background-color': '#eaeaea'
+                });
+            });
+            $('.left').mouseup(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 -5px 1px -2px #ccc, 1px 0 5px -2px #000, -1px 1px 5px -2px #000',
+                    'height': '25px',
+                    'background-color': '#f3f3f3'
+                });
+            });
+            $('.right').mousedown(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 0px 1px -2px #ccc, 1px 0 5px -2px #000, -1px 1px 5px -2px #000',
+                    'height': '23px',
+                    'background-color': '#eaeaea'
+                });
+            });
+            $('.right').mouseup(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 -5px 1px -2px #ccc, 1px 0 5px -2px #000, -1px 1px 5px -2px #000',
+                    'height': '25px',
+                    'background-color': '#f3f3f3'
+                });
+            });
+            $('.upper').mousedown(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 -5px 1px -2px #ccc',
+                    'transform': 'translateY(2px)',
+                    'height': '23px',
+                    'background-color': '#eaeaea'
+                });
+            });
+            $('.upper').mouseup(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 -5px 1px -2px #ccc',
+                    'transform': 'translateY(-2px)',
+                    'height': '25px',
+                    'background-color': '#f3f3f3'
+                });
+            });
+            $('.lower').mousedown(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 -5px 1px -2px #ccc',
+                    'transform': 'translateY(2px)',
+                    'height': '23px',
+                    'background-color': '#eaeaea'
+                });
+            });
+            $('.lower').mouseup(function() {
+                $(this).css({
+                    'box-shadow': 'inset 0 -5px 1px -2px #ccc',
+                    'transform': 'translateY(-2px)',
+                    'height': '25px',
+                    'background-color': '#f3f3f3'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

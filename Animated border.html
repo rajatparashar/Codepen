@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Animated border</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #000;
+            font-family: sans-serif;
+        }
+        
+        span {
+            position: absolute;
+            top: 20%;
+            text-align: center;
+            font-size: 22vw;
+            font-weight: bold;
+            width: 100%;
+            text-shadow: 0 0 10px gray;
+            animation: text 7s infinite linear;
+        }
+        
+        @keyframes text {
+            0% {
+                text-shadow: 0 0 10px Violet;
+            }
+            16.667% {
+                text-shadow: 0 0 10px Indigo;
+            }
+            33.33% {
+                text-shadow: 0 0 10px Blue;
+            }
+            50% {
+                text-shadow: 0 0 10px Green;
+            }
+            66.667% {
+                text-shadow: 0 0 10px Yellow;
+            }
+            83.333% {
+                text-shadow: 0 0 10px Orange;
+            }
+            100% {
+                text-shadow: 0 0 10px Red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <span>qwerty</span>
+
+</body>
+
+</html>
