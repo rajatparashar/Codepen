@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>CSS Filters</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        
+        table {
+            border-spacing: 10px;
+            width: 100%;
+        }
+        
+        td,
+        tr {
+            height: 200px;
+            paadding: 0;
+            border: 1px solid black;
+        }
+        
+        #blur {
+            filter: blur(3px);
+        }
+        
+        #brightness {
+            filter: brightness(150%);
+        }
+        
+        #contrast {
+            filter: contrast(200%);
+        }
+        
+        #dropshadow {
+            filter: drop-shadow(10px 10px 20px gray);
+        }
+        
+        #grayscale {
+            filter: grayscale(200%);
+        }
+        
+        #huerotate {
+            filter: hue-rotate(90deg);
+        }
+        
+        #invert {
+            filter: invert(150%);
+        }
+        
+        #opacity {
+            filter: opacity(50%);
+        }
+        
+        #saturate {
+            filter: saturate(800%);
+        }
+        
+        #sepia {
+            filter: sepia(100%);
+        }
+        
+        #contrastbrightness {
+            filter: contrast(200%) brightness(150%);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <table>
+
+        <tr>
+            <td><img id='blur' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>BLUR (3px)</td>
+            <td><img id='brightness' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>BRIGHTNESS (150%)</td>
+            <td><img id='contrast' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>CONTRAST (200%)</td>
+        </tr>
+
+        <tr>
+            <td><img id='dropshadow' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>DROP-SHADOW (10px 10px 20px grey)</td>
+            <td><img id='grayscale' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>GREYSCALE (200%)</td>
+            <td><img id='huerotate' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>HUE-ROTATE (90deg)</td>
+        </tr>
+
+        <tr>
+            <td><img id='invert' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>INVERT (150%)</td>
+            <td><img id='opacity' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>OPACITY (50%)</td>
+            <td><img id='saturate' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>SATURATE (800%)</td>
+        </tr>
+
+        <tr>
+            <td><img id='sepia' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>SEPIA (100%)</td>
+            <td><img id='contrastbrightness' src='https://www.w3schools.com/cssref/pineapple.jpg'>
+                <br>CONTRAST(200%)-BRIGHTNESS(150%)</td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

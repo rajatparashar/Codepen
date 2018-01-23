@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DailyCSSImages7-Ruler</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #ccc;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid red;
+        }
+        
+        .container {
+            width: 800px;
+            height: 400px;
+            background: linear-gradient(to right, #000 50%, #fff 50%);
+            background-size: 50px 50px;
+            position: absolute;
+            margin: 150px auto;
+            border: 1px solid black;
+        }
+        
+        .box {
+            width: 150px;
+            height: 50px;
+            position: relative;
+            left: 0;
+        }
+        
+        #whitebox {
+            background-color: #fff;
+            top: 50px;
+            animation: move 15s infinite linear alternate;
+        }
+        
+        #blackbox {
+            background-color: #000;
+            top: 250px;
+            animation: move 15s infinite linear alternate;
+        }
+        
+        @keyframes move {
+            from {
+                left: 0;
+            }
+            to {
+                left: 645px;
+            }
+        }
+        
+        button {
+            color: #fff;
+            background-color: #000;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: 100;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        button:hover {
+            text-decoration: underline;
+        }
+        
+        .toggle {
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class='container'>
+
+        <div class="box" id='whitebox'></div>
+        <div class="box" id='blackbox'></div>
+
+    </div>
+
+    <button>Toggle</button>
+
+    <script>
+        $(document).ready(function() {
+            $('button').click(function() {
+                $('.container').toggleClass('toggle');
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

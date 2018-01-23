@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS-only Notifications Component</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            background: linear-gradient(45deg, #ffb3b3, #b3b3ff);
+            min-height: 100%;
+        }
+        
+        * {
+            box-sizing: border-box;
+            border: 0px solid black;
+            font-family: sans-serif;
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 50px;
+            margin-top: 200px;
+            text-align: center;
+        }
+        
+        #para,
+        #box {
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.5;
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+        
+        #box {
+            margin-top: 50px;
+        }
+        
+        .btn {
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 7px;
+            padding: 10px 20px;
+            background-color: transparent;
+            font-size: 15px;
+            outline: none;
+            cursor: pointer;
+            transition: 300ms;
+        }
+        
+        .btn:hover {
+            color: lightblue;
+            background-color: #fff;
+        }
+        
+        .boxes {
+            box-shadow: 2px 2px 10px #777;
+            position: absolute;
+            color: white;
+            padding: 15px 50px;
+            line-height: 1.5;
+            font-weight: 500;
+            display: inline-block;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+        
+        .bars,
+        #initial {
+            box-shadow: 2px 2px 10px #777;
+            position: absolute;
+            color: white;
+            padding: 10px 15px;
+            line-height: 1.5;
+            font-size: 16px;
+            width: 100%;
+            display: none;
+            background-color: #444;
+        }
+        
+        #topleft {
+            background-color: #34b249;
+            top: 20px;
+            left: -400px;
+        }
+        
+        #topright {
+            background-color: #d9d926;
+            top: 20px;
+            right: 20px;
+            display: none;
+        }
+        
+        #bottomright {
+            background-color: #ff4d4d;
+            bottom: 20px;
+            right: 100px;
+            display: none;
+        }
+        
+        #bottomleft {
+            background-color: #00b4ff;
+            bottom: 20px;
+            left: 20px;
+            display: none;
+        }
+        
+        #initial {
+            background-color: #34b249;
+            display: none;
+            top: 0;
+        }
+        
+        #topbar {
+            top: 0;
+        }
+        
+        #bottombar {
+            bottom: 0;
+            box-shadow: 0 -2px 10px #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS-only Notifications Component</h1>
+
+    <p id='para'>This is a Sass mixin that provides notifications functionality using little-to-none Javascript. It makes use of CSS transitions and animations to display notifications as popups or bars on different locations of the viewport. The best thing is that it is fully customizable and easy to use.</p>
+
+    <div id="box">
+        <button class="btn" id="topleft-btn">TOP LEFT</button>
+        <button class="btn" id="topright-btn">TOP RIGHT</button>
+        <button class="btn" id="bottomright-btn">BOTTOM RIGHT</button>
+        <button class="btn" id="bottomleft-btn">BOTTOM LEFT</button>
+        <button class="btn" id="topbar-btn">TOP BAR</button>
+        <button class="btn" id="bottombar-btn">BOTTOM BAR</button>
+    </div>
+
+    <div id="topleft" class="boxes">
+        <p>Lorem ipsum dolor sit amet, consectetur
+            <br>adipisicing elit. Iure, reprehenderit
+            <br>obcaecati itaque. Officiis libero provident
+            <br>perspiciatis eum fugiat laudantium sequi.</p>
+    </div>
+
+    <div id="topright" class="boxes">
+        <p>Lorem ipsum dolor sit amet, consectetur
+            <br>adipisicing elit. Iure, reprehenderit
+            <br>obcaecati itaque. Officiis libero provident
+            <br>perspiciatis eum fugiat laudantium sequi.</p>
+    </div>
+
+    <div id="bottomright" class="boxes">
+        <p>Lorem ipsum dolor sit amet, consectetur
+            <br>adipisicing elit. Iure, reprehenderit
+            <br>obcaecati itaque. Officiis libero provident
+            <br>perspiciatis eum fugiat laudantium sequi.</p>
+    </div>
+
+    <div id="bottomleft" class="boxes">
+        <p>Lorem ipsum dolor sit amet, consectetur
+            <br>adipisicing elit. Iure, reprehenderit
+            <br>obcaecati itaque. Officiis libero provident
+            <br>perspiciatis eum fugiat laudantium sequi.</p>
+    </div>
+
+    <div id="initial">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, reprehenderit obcaecati itaque. Officiis libero provident perspiciatis eum fugiat laudantium sequi.</p>
+    </div>
+
+    <div id="topbar" class="bars">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, reprehenderit obcaecati itaque. Officiis libero provident perspiciatis eum fugiat laudantium sequi.</p>
+    </div>
+
+    <div id="bottombar" class="bars">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, reprehenderit obcaecati itaque. Officiis libero provident perspiciatis eum fugiat laudantium sequi.</p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            $('#initial').slideDown(1000).delay(2000).slideUp(1000);
+
+            $('#topleft-btn').click(function() {
+                $('#topleft').animate({
+                    left: '20px'
+                }, 1000).delay(2000).animate({
+                    left: '-400px'
+                }, 1000);
+                $('.btn').css({
+                    'color': 'white',
+                    'background-color': 'transparent'
+                });
+                $(this).css({
+                    'color': 'lightblue',
+                    'background-color': 'white'
+                });
+            });
+
+            $('#topright-btn').click(function() {
+                $('#topright').fadeIn(1000).delay(2000).fadeOut(1000);
+                $('.btn').css({
+                    'color': 'white',
+                    'background-color': 'transparent'
+                });
+                $(this).css({
+                    'color': 'lightblue',
+                    'background-color': 'white'
+                });
+            });
+
+            $('#bottomright-btn').click(function() {
+                $('#bottomright').animate({
+                    right: '20px'
+                }, 1500).delay(2000).animate({
+                    right: '800px'
+                }, 1500);
+                $('.btn').css({
+                    'color': 'white',
+                    'background-color': 'transparent'
+                });
+                $(this).css({
+                    'color': 'lightblue',
+                    'background-color': 'white'
+                });
+            });
+
+            $('#bottomleft-btn').click(function() {
+                $('#bottomleft').fadeIn(1000).delay(2000).fadeOut(1000);
+                $('.btn').css({
+                    'color': 'white',
+                    'background-color': 'transparent'
+                });
+                $(this).css({
+                    'color': 'lightblue',
+                    'background-color': 'white'
+                });
+            });
+
+            $('#topbar-btn').click(function() {
+                $('#topbar').slideDown(1000).delay(2000).slideUp(1000);
+                $('.btn').css({
+                    'color': 'white',
+                    'background-color': 'transparent'
+                });
+                $(this).css({
+                    'color': 'lightblue',
+                    'background-color': 'white'
+                });
+            });
+
+            $('#bottombar-btn').click(function() {
+                $('#bottombar').fadeIn(1000).delay(2000).fadeOut(1000);
+                $('.btn').css({
+                    'color': 'white',
+                    'background-color': 'transparent'
+                });
+                $(this).css({
+                    'color': 'lightblue',
+                    'background-color': 'white'
+                });
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

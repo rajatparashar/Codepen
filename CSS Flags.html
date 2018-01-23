@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Flags</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            font-size: 18px;
+            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+        
+        table {
+            margin: 50px auto;
+        }
+        
+        td {
+            border: 1px solid #aaa;
+        }
+        
+        .flag {
+            height: 240px;
+            width: 360px;
+            box-shadow: 0 0 30px #aaa;
+            margin: 20px;
+            background-color: white;
+        }
+        
+        .austria {
+            background-color: #ED2939;
+        }
+        
+        .austria:after {
+            content: '';
+            position: absolute;
+            margin-top: 80px;
+            margin-left: -180px;
+            width: 360px;
+            height: 80px;
+            background-color: white;
+        }
+        
+        .canada {
+            background-color: #FF0000;
+        }
+        
+        .canada:after {
+            content: '';
+            position: absolute;
+            margin-left: -90px;
+            width: 180px;
+            height: 240px;
+            background-color: white;
+        }
+        
+        #canada-leaf {
+            width: 135px;
+            height: 135px;
+            position: absolute;
+            margin-top: 50px;
+            margin-left: -65px;
+            z-index: 20;
+        }
+        
+        .denmark:before {
+            content: '';
+            position: absolute;
+            margin-top: 100px;
+            margin-left: -180px;
+            width: 360px;
+            height: 40px;
+            background-color: white;
+        }
+        
+        .denmark {
+            background-color: #C60C30;
+        }
+        
+        .denmark:after {
+            content: '';
+            position: absolute;
+            margin-left: -75px;
+            width: 40px;
+            height: 240px;
+            background-color: white;
+        }
+        
+        .estonia:after {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 360px;
+            height: 160px;
+            margin-left: -180px;
+            background: linear-gradient(#4891D9 50%, black 25%);
+        }
+        
+        .finland:before {
+            content: '';
+            position: absolute;
+            margin-top: 100px;
+            margin-left: -180px;
+            width: 360px;
+            height: 40px;
+            background-color: #003580;
+        }
+        
+        .finland {
+            background-color: white;
+        }
+        
+        .finland:after {
+            content: '';
+            position: absolute;
+            margin-left: -75px;
+            width: 40px;
+            height: 240px;
+            background-color: #003580;
+        }
+        
+        .france:before {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 120px;
+            height: 240px;
+            margin-left: -180px;
+            background-color: #0300f3;
+        }
+        
+        .france {
+            background-color: white;
+        }
+        
+        .france:after {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 120px;
+            height: 240px;
+            margin-left: 60px;
+            background-color: #f90012;
+        }
+        
+        .gabon {
+            background-color: #3A75C4;
+        }
+        
+        .gabon:after {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 360px;
+            height: 160px;
+            margin-left: -180px;
+            background: linear-gradient(#009E60 50%, #FCD116 25%);
+        }
+        
+        .gambia {
+            background-color: #3A7728;
+        }
+        
+        .gambia:after {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 360px;
+            height: 160px;
+            margin-left: -180px;
+            background: linear-gradient( #CE1126 45%, white 20%);
+        }
+        
+        .whitestrips-gambia {
+            width: 360px;
+            height: 60px;
+            background-color: #0C1C8C;
+            position: absolute;
+            margin-top: 85px;
+            z-index: 10;
+        }
+        
+        .georgia:before {
+            content: '';
+            position: absolute;
+            margin-top: 100px;
+            margin-left: -180px;
+            width: 360px;
+            height: 40px;
+            background-color: #FF0000;
+        }
+        
+        .georgia {
+            background-color: white;
+        }
+        
+        .georgia:after {
+            content: '';
+            position: absolute;
+            margin-left: -20px;
+            width: 40px;
+            height: 240px;
+            background-color: #FF0000;
+        }
+        
+        .plus:before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 50px;
+            background-color: #FF0000;
+            margin-left: -100px;
+            margin-top: 23px;
+        }
+        
+        .plus:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 15px;
+            background-color: #FF0000;
+            margin-left: -117px;
+            margin-top: 40px;
+        }
+        
+        #two-plus {
+            margin-left: 370px;
+        }
+        
+        #three-plus {
+            position: absolute;
+            margin-left: 370px;
+            margin-top: 140px;
+        }
+        
+        #four-plus {
+            position: absolute;
+            margin-left: 180px;
+            margin-top: 140px;
+        }
+        
+        .germany {
+            background-color: #FFCE00;
+        }
+        
+        .germany:after {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 360px;
+            height: 160px;
+            margin-left: -180px;
+            background: linear-gradient(black 50%, #DD0000 25%);
+        }
+        
+        .iceland:before {
+            content: '';
+            position: absolute;
+            margin-top: 100px;
+            margin-left: -180px;
+            width: 360px;
+            height: 30px;
+            background-color: #D72828;
+            z-index: 100;
+        }
+        
+        .iceland {
+            background-color: #003897;
+            z-index: -100;
+        }
+        
+        .iceland:after {
+            content: '';
+            position: absolute;
+            margin-left: -75px;
+            width: 30px;
+            height: 240px;
+            background-color: #D72828;
+            z-index: 100;
+        }
+        
+        .whitestrips-iceland {
+            position: absolute;
+            width: 60px;
+            z-index: 0;
+            background-color: white;
+        }
+        
+        #vertical-iceland {
+            height: 240px;
+            margin-left: 90px;
+        }
+        
+        #horizontal-iceland {
+            height: 60px;
+            width: 360px;
+            margin-left: 0;
+            margin-top: 85px;
+        }
+        
+        .india {
+            background-color: #128807;
+        }
+        
+        .india:after {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 360px;
+            height: 160px;
+            margin-left: -180px;
+            background: linear-gradient(#FF9933 50%, white 25%);
+        }
+        
+        #indian-circle {
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            margin-top: -178px;
+            margin-left: -38px;
+            z-index: 10;
+        }
+        
+        .ireland:before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 240px;
+            margin-left: -180px;
+            background-color: #169B62;
+        }
+        
+        .ireland {
+            background-color: white;
+        }
+        
+        .ireland:after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 240px;
+            margin-left: 60px;
+            background-color: #FF883E;
+        }
+        
+        .italy:before {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 120px;
+            height: 240px;
+            margin-left: -180px;
+            background-color: #009246;
+        }
+        
+        .italy {
+            background-color: white;
+        }
+        
+        .italy:after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 240px;
+            margin-left: 60px;
+            background-color: #CE2B37;
+        }
+        
+        .japan:after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: #BC002D;
+            border-radius: 50%;
+            margin-left: -60px;
+            margin-top: 55px;
+        }
+        
+        .madagascar {
+            background: linear-gradient(to left, #FC3D32 65%, white 50%);
+        }
+        
+        .green-block {
+            background-color: #007E3A;
+            width: 233px;
+            height: 120px;
+            position: relative;
+            top: 120px;
+            left: 127px;
+        }
+        
+        .monaco {
+            height: 240px;
+            width: 360px;
+            background: linear-gradient(#CE1126 50%, white 50%);
+        }
+        
+        .netherlands {
+            background-color: #21468B;
+        }
+        
+        .netherlands:after {
+            content: '';
+            position: absolute;
+            width: 360px;
+            height: 160px;
+            margin-left: -180px;
+            background: linear-gradient(#AE1C28 50%, white 25%);
+        }
+        
+        .nigeria {
+            background-color: #008751;
+        }
+        
+        .nigeria-block {
+            background-color: white;
+            width: 120px;
+            height: 240px;
+            margin-left: 120px;
+        }
+        
+        .norway:before {
+            content: '';
+            position: absolute;
+            margin-top: 100px;
+            margin-left: -180px;
+            width: 360px;
+            height: 30px;
+            background-color: #002868;
+            z-index: 100;
+        }
+        
+        .norway {
+            background-color: #EF2B2D;
+            z-index: -100;
+        }
+        
+        .norway:after {
+            content: '';
+            position: absolute;
+            margin-left: -75px;
+            width: 30px;
+            height: 240px;
+            background-color: #002868;
+            z-index: 100;
+        }
+        
+        .whitestrips-norway {
+            position: absolute;
+            width: 60px;
+            z-index: 0;
+            background-color: white;
+        }
+        
+        #vertical-norway {
+            height: 240px;
+            margin-left: 90px;
+        }
+        
+        #horizontal-norway {
+            height: 60px;
+            width: 360px;
+            margin-left: 0;
+            margin-top: 85px;
+        }
+        
+        .palau {
+            background-color: #4AADD6;
+        }
+        
+        .palau:after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: #FFDE00;
+            border-radius: 50%;
+            margin-left: -95px;
+            margin-top: 55px;
+        }
+        
+        .poland {
+            height: 240px;
+            width: 360px;
+            background: linear-gradient( white 50%, #DC143C 50%);
+        }
+        
+        .romania:before {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 120px;
+            height: 240px;
+            margin-left: -180px;
+            background-color: #002B7F;
+        }
+        
+        .romania {
+            background-color: #FCD116;
+        }
+        
+        .romania:after {
+            content: '';
+            height: 180px;
+            position: absolute;
+            width: 120px;
+            height: 240px;
+            margin-left: 60px;
+            background-color: #CE1126;
+        }
+        
+        .sweden:before {
+            content: '';
+            position: absolute;
+            margin-top: 100px;
+            margin-left: -180px;
+            width: 360px;
+            height: 40px;
+            background-color: #FECC00;
+        }
+        
+        .sweden {
+            background-color: #006AA7;
+        }
+        
+        .sweden:after {
+            content: '';
+            position: absolute;
+            margin-left: -75px;
+            width: 40px;
+            height: 240px;
+            background-color: #FECC00;
+        }
+        
+        .switzerland:before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 160px;
+            margin-left: -25px;
+            margin-top: 40px;
+            background-color: white;
+        }
+        
+        .switzerland {
+            background-color: #FF0000;
+        }
+        
+        .switzerland:after {
+            content: '';
+            position: absolute;
+            width: 160px;
+            height: 50px;
+            margin-left: -80px;
+            margin-top: 95px;
+            background-color: white;
+        }
+        
+        .uk {
+            background-color: #003399;
+	    overflow: hidden;
+            position: absolute;
+            margin-top: -130px;
+        }
+        
+        .red-strips {
+            background-color: #cc0000;
+            z-index: 10;
+        }
+        
+        #horizontal-red-strip {
+            width: 360px;
+            height: 50px;
+            position: absolute;
+            margin-top: 95px;
+            z-index: 100;
+        }
+        
+        #vertical-red-strip {
+            width: 50px;
+            height: 240px;
+            position: absolute;
+            margin-left: 155px;
+            z-index: 100;
+        }
+        
+        .white-strips {
+            background-color: white;
+            z-index: 5;
+        }
+        
+        #horizontal-white-strip {
+            width: 360px;
+            height: 80px;
+            position: absolute;
+            margin-top: 80px;
+            z-index: 90;
+        }
+        
+        #vertical-white-strip {
+            width: 80px;
+            height: 240px;
+            position: absolute;
+            margin-left: 140px;
+            z-index: 90;
+        }
+        
+        #back-white-strip {
+            height: 40px;
+            width: 435px;
+            position: absolute;
+            transform: rotate(33deg);
+            margin-top: 103px;
+            margin-left: -38px;
+            z-index: 5;
+        }
+        
+        #forward-white-strip {
+            height: 40px;
+            width: 435px;
+            position: absolute;
+            transform: rotate(-33deg);
+            margin-top: 103px;
+            margin-left: -37px;
+            z-index: 5;
+        }
+        
+        #back-red-strip {
+            background-color: #cc0000;
+            position: absolute;
+            z-index: 5;
+            height: 15px;
+            width: 440px;
+            margin-top: 110px;
+            margin-left: -40px;
+            transform: rotate(33deg);
+        }
+        
+        #forward-red-strip {
+            background-color: #cc0000;
+            position: absolute;
+            z-index: 5;
+            height: 15px;
+            width: 440px;
+            margin-top: 110px;
+            margin-left: -40px;
+            transform: rotate(-33deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+
+        <tr>
+            <td>
+                <div class='flag austria'></div>
+                <br>AUSTRIA</td>
+
+            <td>
+                <div class='flag canada'><img id='canada-leaf' src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Maple_Leaf.svg/2000px-Maple_Leaf.svg.png' alt='no image found!!'></div>
+                <br>CANADA</td>
+
+            <td>
+                <div class='flag denmark'></div>
+                <br>DENMARK</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='flag estonia'></div>
+                <br>ESTONIA</td>
+
+            <td>
+                <div class='flag finland'></div>
+                <br>FINLAND</td>
+
+            <td>
+                <div class='flag france'></div>
+                <br>FRANCE</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='flag gabon'></div>
+                <br>GABON</td>
+
+            <td>
+                <div class='flag gambia'>
+                    <div class='whitestrips-gambia'></div>
+                </div>
+                <br>GAMBIA</td>
+
+            <td>
+                <div class='flag georgia'>
+                    <div class='plus' id='one-plus'></div>
+                    <div class='plus' id='two-plus'></div>
+                    <div class='plus' id='three-plus'></div>
+                    <div class='plus' id='four-plus'></div>
+                </div>
+                <br>GEORGIA</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='flag germany'></div>
+                <br>GERMANY</td>
+
+            <td>
+                <div class='flag iceland'>
+                    <div class='whitestrips-iceland' id='vertical-iceland'></div>
+                    <div class='whitestrips-iceland' id='horizontal-iceland'></div>
+                </div>
+                <br>ICELAND</td>
+
+            <td>
+                <div class='flag india'></div><img id='indian-circle' src='http://www.infoqueenbee.com/wp-content/uploads/2013/08/ashoka-chakra-logo-vector-01.png' alt='no image found!!'>
+                <br>INDIA</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='flag ireland'></div>
+                <br>IRELAND</td>
+
+            <td>
+                <div class='flag italy'></div>
+                <br>ITALY</td>
+
+            <td>
+                <div class='flag japan'></div>
+                <br>JAPAN</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='flag madagascar'>
+                    <div class="green-block"></div>
+                </div>
+                <br>MADAGASCAR</td>
+
+            <td>
+                <div class='flag monaco'></div>
+                <br>MONACO</td>
+
+            <td>
+                <div class='flag netherlands'></div>
+                <br>NETHERLANDS</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='flag nigeria'>
+                    <div class='nigeria-block'></div>
+                </div>
+                <br>NIGERIA</td>
+
+            <td>
+                <div class='flag norway'>
+                    <div class='whitestrips-norway' id='vertical-norway'></div>
+                    <div class='whitestrips-norway' id='horizontal-norway'></div>
+                </div>
+                <br>NORWAY</td>
+
+            <td>
+                <div class='flag palau'></div>
+                <br>PALAU</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='flag poland'></div>
+                <br>POLAND</td>
+
+            <td>
+                <div class='flag romania'></div>
+                <br>ROMANIA</td>
+
+            <td>
+                <div class='flag sweden'></div>
+                <br>SWEDEN</td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class='flag switzerland'></div>
+                <br>SWITZERLAND</td>
+
+            <td>
+                <div class='flag uk'>
+                    <div class='red-strips' id='horizontal-red-strip'></div>
+                    <div class='red-strips' id='vertical-red-strip'></div>
+                    <div class='white-strips' id='horizontal-white-strip'></div>
+                    <div class='white-strips' id='vertical-white-strip'></div>
+                    <div class='white-strips' id='back-white-strip'></div>
+                    <div class='white-strips' id='forward-white-strip'></div>
+                    <div id='back-red-strip'></div>
+                    <div id='forward-red-strip'></div>
+                </div>
+                <br>
+
+            </td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
